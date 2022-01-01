@@ -6,12 +6,16 @@ import requests
 
 """
 File used to get data from wto api. Keys needed to get access.
+I shoved everything into one file to put on git which in an attempt to make it easier to share.
+
+Though it's a bit cleaner to part out the code to seperate files and import nicely. Which is how I ran it locally.
 """
 
 
 
 """
-These wto api calls were developed by larocca89@gmail.com, I simply converted the responses to pandas dataframes at the end of each function.
+I found these wto api get methods in a git repositor by larocca89@gmail.com.
+I simply converted the responses to pandas dataframes at the end of each function in a horribly dense comprehension.
 """
 
 def get_indicators(key,
@@ -161,7 +165,9 @@ def get_products(key,
 
 
 """
-Functions to retrieve an entire dataset from wto api
+These functions are to retrieve an entire dataset from wto api in a multi-processed manner using pooling.
+There is a setup function to get metadata and other needed stuff and a query function to get the data.
+Throughout this I tried using a few different datasets which is why there are a few functions down here.
 """
 
 def setup_HS_M_0010(key):
@@ -331,12 +337,16 @@ def query_ITS(key_str:str, years:list):
     print(f'COMPLETE -------------- {years[0]} {years[1]} {key_str}')
 
 
-
+# you'll need your own keys
 keys = ['',
             '',
             '',
             '']
 
+
+# also depending on the years availiable for a dataset
+# you'll need to evenly space them into a list of lists 
+# to get each instance of the data query functions
 # years = [[1996, 2003],
 #             [2003, 2010],
 #             [2010, 2017],
