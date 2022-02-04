@@ -4,10 +4,7 @@
 
 [link to blog post](https://rcyost.github.io/posts/2021/12/trade/)
 
-most likely methodologically weak, first time working with granger, cointegration, and VARs
-
-would be keen to hear how to shore up to make more rigerous 
-
+my attempt at putting together causal networks
 
 ![png](images/ITS_VAR_MM_v5_2_3.png)
 
